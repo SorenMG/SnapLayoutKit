@@ -1,5 +1,5 @@
 language: swift
-script: xcodebuild -project {project}.xcodeproj -target {target} -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+script: xcodebuild -project EasyLayout.xcodeproj -target EEasyLayout -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
 #xcode_project: Example/EasyLayout.xcodeproj
 #xcode_scheme: Example/EasyLayoutTests
 #xcode_destination: platform=iOS Simulator,OS=12.1,name=iPhone X

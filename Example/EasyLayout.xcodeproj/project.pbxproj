@@ -12,7 +12,26 @@
 		4586BCD4226526A700C589D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4586BCD2226526A700C589D4 /* Main.storyboard */; };
 		4586BCD6226526A900C589D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4586BCD5226526A900C589D4 /* Assets.xcassets */; };
 		4586BCD9226526A900C589D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4586BCD7226526A900C589D4 /* LaunchScreen.storyboard */; };
+		4586BCE722652BA100C589D4 /* EasyLayoutUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4586BCE622652BA100C589D4 /* EasyLayoutUITests.swift */; };
+		4586BCF522652BB100C589D4 /* EasyLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4586BCF422652BB100C589D4 /* EasyLayoutTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4586BCE922652BA100C589D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4586BCC3226526A700C589D4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4586BCCA226526A700C589D4;
+			remoteInfo = EasyLayout;
+		};
+		4586BCF722652BB100C589D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4586BCC3226526A700C589D4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4586BCCA226526A700C589D4;
+			remoteInfo = EasyLayout;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4586BCCB226526A700C589D4 /* EasyLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,10 +41,30 @@
 		4586BCD5226526A900C589D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4586BCD8226526A900C589D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4586BCDA226526A900C589D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4586BCE422652BA100C589D4 /* EasyLayoutUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyLayoutUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4586BCE622652BA100C589D4 /* EasyLayoutUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyLayoutUITests.swift; sourceTree = "<group>"; };
+		4586BCE822652BA100C589D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4586BCF222652BB100C589D4 /* EasyLayoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyLayoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4586BCF422652BB100C589D4 /* EasyLayoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyLayoutTests.swift; sourceTree = "<group>"; };
+		4586BCF622652BB100C589D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		4586BCC8226526A700C589D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4586BCE122652BA100C589D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4586BCEF22652BB100C589D4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,6 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				4586BCCD226526A700C589D4 /* EasyLayout */,
+				4586BCE522652BA100C589D4 /* EasyLayoutUITests */,
+				4586BCF322652BB100C589D4 /* EasyLayoutTests */,
 				4586BCCC226526A700C589D4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,6 +88,8 @@
 			isa = PBXGroup;
 			children = (
 				4586BCCB226526A700C589D4 /* EasyLayout.app */,
+				4586BCE422652BA100C589D4 /* EasyLayoutUITests.xctest */,
+				4586BCF222652BB100C589D4 /* EasyLayoutTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -62,6 +105,24 @@
 				4586BCDA226526A900C589D4 /* Info.plist */,
 			);
 			path = EasyLayout;
+			sourceTree = "<group>";
+		};
+		4586BCE522652BA100C589D4 /* EasyLayoutUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4586BCE622652BA100C589D4 /* EasyLayoutUITests.swift */,
+				4586BCE822652BA100C589D4 /* Info.plist */,
+			);
+			path = EasyLayoutUITests;
+			sourceTree = "<group>";
+		};
+		4586BCF322652BB100C589D4 /* EasyLayoutTests */ = {
+			isa = PBXGroup;
+			children = (
+				4586BCF422652BB100C589D4 /* EasyLayoutTests.swift */,
+				4586BCF622652BB100C589D4 /* Info.plist */,
+			);
+			path = EasyLayoutTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,6 +145,42 @@
 			productReference = 4586BCCB226526A700C589D4 /* EasyLayout.app */;
 			productType = "com.apple.product-type.application";
 		};
+		4586BCE322652BA100C589D4 /* EasyLayoutUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4586BCED22652BA100C589D4 /* Build configuration list for PBXNativeTarget "EasyLayoutUITests" */;
+			buildPhases = (
+				4586BCE022652BA100C589D4 /* Sources */,
+				4586BCE122652BA100C589D4 /* Frameworks */,
+				4586BCE222652BA100C589D4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4586BCEA22652BA100C589D4 /* PBXTargetDependency */,
+			);
+			name = EasyLayoutUITests;
+			productName = EasyLayoutUITests;
+			productReference = 4586BCE422652BA100C589D4 /* EasyLayoutUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		4586BCF122652BB100C589D4 /* EasyLayoutTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4586BCF922652BB100C589D4 /* Build configuration list for PBXNativeTarget "EasyLayoutTests" */;
+			buildPhases = (
+				4586BCEE22652BB100C589D4 /* Sources */,
+				4586BCEF22652BB100C589D4 /* Frameworks */,
+				4586BCF022652BB100C589D4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4586BCF822652BB100C589D4 /* PBXTargetDependency */,
+			);
+			name = EasyLayoutTests;
+			productName = EasyLayoutTests;
+			productReference = 4586BCF222652BB100C589D4 /* EasyLayoutTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -96,6 +193,14 @@
 				TargetAttributes = {
 					4586BCCA226526A700C589D4 = {
 						CreatedOnToolsVersion = 10.1;
+					};
+					4586BCE322652BA100C589D4 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 4586BCCA226526A700C589D4;
+					};
+					4586BCF122652BB100C589D4 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 4586BCCA226526A700C589D4;
 					};
 				};
 			};
@@ -113,6 +218,8 @@
 			projectRoot = "";
 			targets = (
 				4586BCCA226526A700C589D4 /* EasyLayout */,
+				4586BCE322652BA100C589D4 /* EasyLayoutUITests */,
+				4586BCF122652BB100C589D4 /* EasyLayoutTests */,
 			);
 		};
 /* End PBXProject section */
@@ -128,6 +235,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4586BCE222652BA100C589D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4586BCF022652BB100C589D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -140,7 +261,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4586BCE022652BA100C589D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4586BCE722652BA100C589D4 /* EasyLayoutUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4586BCEE22652BB100C589D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4586BCF522652BB100C589D4 /* EasyLayoutTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4586BCEA22652BA100C589D4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4586BCCA226526A700C589D4 /* EasyLayout */;
+			targetProxy = 4586BCE922652BA100C589D4 /* PBXContainerItemProxy */;
+		};
+		4586BCF822652BB100C589D4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4586BCCA226526A700C589D4 /* EasyLayout */;
+			targetProxy = 4586BCF722652BB100C589D4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4586BCD2226526A700C589D4 /* Main.storyboard */ = {
@@ -314,6 +464,84 @@
 			};
 			name = Release;
 		};
+		4586BCEB22652BA100C589D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 843KUTQ45Z;
+				INFOPLIST_FILE = EasyLayoutUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = soren.moller.EasyLayoutUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EasyLayout;
+			};
+			name = Debug;
+		};
+		4586BCEC22652BA100C589D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 843KUTQ45Z;
+				INFOPLIST_FILE = EasyLayoutUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = soren.moller.EasyLayoutUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EasyLayout;
+			};
+			name = Release;
+		};
+		4586BCFA22652BB100C589D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 843KUTQ45Z;
+				INFOPLIST_FILE = EasyLayoutTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = soren.moller.EasyLayoutTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EasyLayout.app/EasyLayout";
+			};
+			name = Debug;
+		};
+		4586BCFB22652BB100C589D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 843KUTQ45Z;
+				INFOPLIST_FILE = EasyLayoutTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = soren.moller.EasyLayoutTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EasyLayout.app/EasyLayout";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -331,6 +559,24 @@
 			buildConfigurations = (
 				4586BCDE226526A900C589D4 /* Debug */,
 				4586BCDF226526A900C589D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4586BCED22652BA100C589D4 /* Build configuration list for PBXNativeTarget "EasyLayoutUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4586BCEB22652BA100C589D4 /* Debug */,
+				4586BCEC22652BA100C589D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4586BCF922652BB100C589D4 /* Build configuration list for PBXNativeTarget "EasyLayoutTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4586BCFA22652BB100C589D4 /* Debug */,
+				4586BCFB22652BB100C589D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

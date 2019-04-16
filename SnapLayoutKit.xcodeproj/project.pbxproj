@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		457BA8A5226638B700772F49 /* EasyLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4586BD06226634F500C589D4 /* EasyLayout.framework */; };
-		457BA8A6226638B700772F49 /* EasyLayout.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4586BD06226634F500C589D4 /* EasyLayout.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		457BA8AC2266398600772F49 /* SnapMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457BA8AB2266398600772F49 /* SnapMethods.swift */; };
 		457BA8AE2266398900772F49 /* SizeMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457BA8AD2266398900772F49 /* SizeMethods.swift */; };
 		457BA8B02266398B00772F49 /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457BA8AF2266398B00772F49 /* Properties.swift */; };
 		457BA8B22266398C00772F49 /* BaseMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457BA8B12266398C00772F49 /* BaseMethods.swift */; };
 		457BA8B42266398F00772F49 /* CenteringMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457BA8B32266398E00772F49 /* CenteringMethods.swift */; };
 		457BA8B62266399300772F49 /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457BA8B52266399300772F49 /* Attribute.swift */; };
+		457BA8D62266651C00772F49 /* SnapLayoutKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4586BD06226634F500C589D4 /* SnapLayoutKit.framework */; };
+		457BA8D72266651C00772F49 /* SnapLayoutKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4586BD06226634F500C589D4 /* SnapLayoutKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4586BD0B226634F500C589D4 /* EasyLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 4586BD09226634F500C589D4 /* EasyLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4586BD182266350500C589D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4586BD172266350500C589D4 /* AppDelegate.swift */; };
 		4586BD1A2266350500C589D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4586BD192266350500C589D4 /* ViewController.swift */; };
@@ -23,23 +23,23 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		457BA8A7226638B700772F49 /* PBXContainerItemProxy */ = {
+		457BA8D82266651C00772F49 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4586BCFD226634F500C589D4 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 4586BD05226634F500C589D4;
-			remoteInfo = EasyLayout;
+			remoteInfo = SnapLayoutKit;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		457BA8A9226638B700772F49 /* Embed Frameworks */ = {
+		457BA8DA2266651C00772F49 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				457BA8A6226638B700772F49 /* EasyLayout.framework in Embed Frameworks */,
+				457BA8D72266651C00772F49 /* SnapLayoutKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -53,7 +53,7 @@
 		457BA8B12266398C00772F49 /* BaseMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMethods.swift; sourceTree = "<group>"; };
 		457BA8B32266398E00772F49 /* CenteringMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenteringMethods.swift; sourceTree = "<group>"; };
 		457BA8B52266399300772F49 /* Attribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attribute.swift; sourceTree = "<group>"; };
-		4586BD06226634F500C589D4 /* EasyLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EasyLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4586BD06226634F500C589D4 /* SnapLayoutKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SnapLayoutKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4586BD09226634F500C589D4 /* EasyLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EasyLayout.h; sourceTree = "<group>"; };
 		4586BD0A226634F500C589D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4586BD152266350500C589D4 /* iOS-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,7 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				457BA8A5226638B700772F49 /* EasyLayout.framework in Frameworks */,
+				457BA8D62266651C00772F49 /* SnapLayoutKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,7 +107,7 @@
 		4586BCFC226634F500C589D4 = {
 			isa = PBXGroup;
 			children = (
-				4586BD08226634F500C589D4 /* EasyLayout */,
+				4586BD08226634F500C589D4 /* SnapLayoutKit */,
 				4586BD162266350500C589D4 /* iOS-Example */,
 				4586BD07226634F500C589D4 /* Products */,
 				457BA89E2266386700772F49 /* Frameworks */,
@@ -117,20 +117,20 @@
 		4586BD07226634F500C589D4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4586BD06226634F500C589D4 /* EasyLayout.framework */,
+				4586BD06226634F500C589D4 /* SnapLayoutKit.framework */,
 				4586BD152266350500C589D4 /* iOS-Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4586BD08226634F500C589D4 /* EasyLayout */ = {
+		4586BD08226634F500C589D4 /* SnapLayoutKit */ = {
 			isa = PBXGroup;
 			children = (
 				457BA8B722663A3800772F49 /* Source */,
 				4586BD09226634F500C589D4 /* EasyLayout.h */,
 				4586BD0A226634F500C589D4 /* Info.plist */,
 			);
-			path = EasyLayout;
+			path = SnapLayoutKit;
 			sourceTree = "<group>";
 		};
 		4586BD162266350500C589D4 /* iOS-Example */ = {
@@ -159,9 +159,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		4586BD05226634F500C589D4 /* EasyLayout */ = {
+		4586BD05226634F500C589D4 /* SnapLayoutKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4586BD0E226634F500C589D4 /* Build configuration list for PBXNativeTarget "EasyLayout" */;
+			buildConfigurationList = 4586BD0E226634F500C589D4 /* Build configuration list for PBXNativeTarget "SnapLayoutKit" */;
 			buildPhases = (
 				4586BD01226634F500C589D4 /* Headers */,
 				4586BD02226634F500C589D4 /* Sources */,
@@ -172,9 +172,9 @@
 			);
 			dependencies = (
 			);
-			name = EasyLayout;
+			name = SnapLayoutKit;
 			productName = EasyLayout;
-			productReference = 4586BD06226634F500C589D4 /* EasyLayout.framework */;
+			productReference = 4586BD06226634F500C589D4 /* SnapLayoutKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		4586BD142266350500C589D4 /* iOS-Example */ = {
@@ -184,12 +184,12 @@
 				4586BD112266350500C589D4 /* Sources */,
 				4586BD122266350500C589D4 /* Frameworks */,
 				4586BD132266350500C589D4 /* Resources */,
-				457BA8A9226638B700772F49 /* Embed Frameworks */,
+				457BA8DA2266651C00772F49 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				457BA8A8226638B700772F49 /* PBXTargetDependency */,
+				457BA8D92266651C00772F49 /* PBXTargetDependency */,
 			);
 			name = "iOS-Example";
 			productName = "iOS-Example";
@@ -215,7 +215,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4586BD00226634F500C589D4 /* Build configuration list for PBXProject "EasyLayout" */;
+			buildConfigurationList = 4586BD00226634F500C589D4 /* Build configuration list for PBXProject "SnapLayoutKit" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -228,7 +228,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4586BD05226634F500C589D4 /* EasyLayout */,
+				4586BD05226634F500C589D4 /* SnapLayoutKit */,
 				4586BD142266350500C589D4 /* iOS-Example */,
 			);
 		};
@@ -279,10 +279,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		457BA8A8226638B700772F49 /* PBXTargetDependency */ = {
+		457BA8D92266651C00772F49 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4586BD05226634F500C589D4 /* EasyLayout */;
-			targetProxy = 457BA8A7226638B700772F49 /* PBXContainerItemProxy */;
+			target = 4586BD05226634F500C589D4 /* SnapLayoutKit */;
+			targetProxy = 457BA8D82266651C00772F49 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -431,7 +431,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = EasyLayout/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SnapLayoutKit/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -459,7 +459,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = EasyLayout/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SnapLayoutKit/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -518,7 +518,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4586BD00226634F500C589D4 /* Build configuration list for PBXProject "EasyLayout" */ = {
+		4586BD00226634F500C589D4 /* Build configuration list for PBXProject "SnapLayoutKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4586BD0C226634F500C589D4 /* Debug */,
@@ -527,7 +527,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4586BD0E226634F500C589D4 /* Build configuration list for PBXNativeTarget "EasyLayout" */ = {
+		4586BD0E226634F500C589D4 /* Build configuration list for PBXNativeTarget "SnapLayoutKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4586BD0F226634F500C589D4 /* Debug */,

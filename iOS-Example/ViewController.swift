@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import EasyLayout
+import SnapLayoutKit
 
 class ViewController: UIViewController {
     

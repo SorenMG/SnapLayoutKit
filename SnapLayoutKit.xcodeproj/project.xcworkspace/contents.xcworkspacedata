@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:EasyLayout.xcodeproj">
+      location = "self:/Users/soren/Desktop/EasyLayout/SnapLayoutKit.xcodeproj">
    </FileRef>
 </Workspace>

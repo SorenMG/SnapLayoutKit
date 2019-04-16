@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  EasyLayout
+//  iOS-Example
 //
-//  Created by Søren Møller Gade Hansen on 15/04/2019.
+//  Created by Søren Møller Gade Hansen on 16/04/2019.
 //  Copyright © 2019 Søren Møller Gade Hansen. All rights reserved.
 //
 

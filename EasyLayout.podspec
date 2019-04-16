@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "EasyLayout"
-  s.version      = "1.0"
+  s.version      = "v.0.1"
   s.homepage     = "https://github.com/soren1146/EasyLayout"
   s.summary      = "Light and easy autolayout for Swift."
   s.description	 = "EasyLayout is a lightweight Swift framework (<300 lines) that lets you create Auto Layout ocnstraints programmatically. The framework extends UIView with wrapper functions, that does not conflict with your current constraints in the project. The methods are chainable resulting in an ease with setting up your UI."

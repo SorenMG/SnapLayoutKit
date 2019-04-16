@@ -1,4 +1,4 @@
-# EasyLayout
+# SnapLayoutKit
 [![Build Status](https://travis-ci.com/soren1146/EasyLayout.svg?branch=master)](https://travis-ci.com/soren1146/EasyLayout)
 ![Cocoapods platforms](https://img.shields.io/badge/platform-ios-lightgrey.svg)
 

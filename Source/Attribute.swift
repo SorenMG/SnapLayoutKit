@@ -21,21 +21,21 @@ public extension UIView {
         case none
 
         func isXAxis() -> Bool {
-            if self == .left || self == .right || self == .centerX || self == .none {
+            if self == .left || self == .right || self == .centerX {
                 return true
             }
             return false
         }
         
         func isYAxis() -> Bool {
-            if self == .top || self == .bottom || self == .centerY || self == .none {
+            if self == .top || self == .bottom || self == .centerY {
                 return true
             }
             return false
         }
         
         func isDimension() -> Bool {
-            if self == .height || self == .width || self == .none {
+            if self == .height || self == .width {
                 return true
             }
             return false

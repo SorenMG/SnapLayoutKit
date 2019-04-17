@@ -13,6 +13,7 @@ public extension UIView {
     @discardableResult
     public func exec() -> Self {
         self.translatesAutoresizingMaskIntoConstraints = false
+        safeArea = false
         return self
     }
     

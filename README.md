@@ -8,7 +8,7 @@
 ## Features
 - Lightweight and easy to use
 - Chainable methods
-- Automatically takes care of safe areas
+- Automatically takes care of safe area _(requires iOS 11 or higher)_
 - Locale reading direction adaptation
 
 # Author

@@ -52,18 +52,14 @@ public extension UIView {
         
         if safeArea {
             if let name = safetyAnchor.value(forKey: "name") as? String {
-                if name == "left" {
+                if name == "leading" {
                     if #available(iOS 11.0, *) {
-                        safetyAnchor = view.safeAreaLayoutGuide.leftAnchor
-                    } else {
-                        // Fallback on earlier versions
+                        safetyAnchor = view.safeAreaLayoutGuide.leadingAnchor
                     }
                 }
-                else if name == "right" {
+                else if name == "trailing" {
                     if #available(iOS 11.0, *) {
-                        safetyAnchor = view.safeAreaLayoutGuide.rightAnchor
-                    } else {
-                        // Fallback on earlier versions
+                        safetyAnchor = view.safeAreaLayoutGuide.trailingAnchor
                     }
                 }
             }
@@ -81,15 +77,11 @@ public extension UIView {
                 if name == "top" {
                     if #available(iOS 11.0, *) {
                         safetyAnchor = view.safeAreaLayoutGuide.topAnchor
-                    } else {
-                        // Fallback on earlier versions
                     }
                 }
                 else if name == "bottom" {
                     if #available(iOS 11.0, *) {
                         safetyAnchor = view.safeAreaLayoutGuide.bottomAnchor
-                    } else {
-                        // Fallback on earlier versions
                     }
                 }
             }
@@ -104,11 +96,13 @@ public extension UIView {
     
     internal func bind(attribute: Attribute, to viewAttribute: Attribute, offset: CGFloat, view: UIView) {
         // As anchors are static, only check when developing
-        #if DEBUG
+//        #if DEBUG
+//        print(attribute.isXAxis(), viewAttribute.isXAxis(), " | ", attribute.isYAxis(), viewAttribute.isYAxis(), " | ", attribute.isDimension(), viewAttribute.isDimension())
+//
 //            if attribute.isXAxis() != viewAttribute.isXAxis() || attribute.isYAxis() != viewAttribute.isYAxis() || attribute.isDimension() != viewAttribute.isDimension() {
 //                fatalError("Cannot bind different typed anchors")
 //            }
-        #endif
+//        #endif
         
         switch attribute {
         case .width:
@@ -133,15 +127,15 @@ public extension UIView {
             }
         case .left:
             if viewAttribute == .right {
-                bindXAxis(anchor: self.leftAnchor, equalTo: view.rightAnchor, offset: offset, view: view)
+                bindXAxis(anchor: self.leadingAnchor, equalTo: view.trailingAnchor, offset: offset, view: view)
             } else {
-                bindXAxis(anchor: self.leftAnchor, equalTo: view.leftAnchor, offset: offset, view: view)
+                bindXAxis(anchor: self.leadingAnchor, equalTo: view.leadingAnchor, offset: offset, view: view)
             }
         case .right:
             if viewAttribute == .right {
-                bindXAxis(anchor: self.rightAnchor, equalTo: view.rightAnchor, offset: offset, view: view)
+                bindXAxis(anchor: self.trailingAnchor, equalTo: view.trailingAnchor, offset: offset, view: view)
             } else {
-                bindXAxis(anchor: self.rightAnchor, equalTo: view.leftAnchor, offset: offset, view: view)
+                bindXAxis(anchor: self.trailingAnchor, equalTo: view.leadingAnchor, offset: offset, view: view)
             }
         case .top:
             if viewAttribute == .top {
@@ -156,9 +150,25 @@ public extension UIView {
                 bindYAxis(anchor: self.bottomAnchor, equalTo: view.bottomAnchor, offset: offset, view: view)
             }
         case .centerX:
-            break
+            if viewAttribute == .left {
+                bindXAxis(anchor: self.centerXAnchor, equalTo: view.leadingAnchor, offset: offset, view: view)
+            }
+            else if viewAttribute == .right {
+                bindXAxis(anchor: self.centerXAnchor, equalTo: view.trailingAnchor, offset: offset, view: view)
+            }
+            else {
+                bindXAxis(anchor: self.centerXAnchor, equalTo: view.centerXAnchor, offset: offset, view: view)
+            }
         case .centerY:
-            break
+            if viewAttribute == .top {
+                bindYAxis(anchor: self.centerYAnchor, equalTo: view.topAnchor, offset: offset, view: view)
+            }
+            else if viewAttribute == .bottom {
+                bindYAxis(anchor: self.centerYAnchor, equalTo: view.bottomAnchor, offset: offset, view: view)
+            }
+            else {
+                bindYAxis(anchor: self.centerYAnchor, equalTo: view.centerYAnchor, offset: offset, view: view)
+            }
         case .none:
             assert(false, "Cannot bind an undefined anchor")
         }

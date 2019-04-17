@@ -38,21 +38,21 @@ class ViewController: UIViewController {
         view.backgroundColor = .white
         
         view.addSubview(greenView)
-        greenView
-            .exec()
+        greenView.exec()
             .safe()
-            .snap(to: view, inset: .init(top: 0, left: 20, bottom: 0, right: 20))
+            .snap(to: view)
         
         view.addSubview(redView)
         redView
             .exec()
-            .center(to: view)
+            .centerY(to: greenView)
+            .snapRight(view, offset: -100)
             .size(.init(width: 100, height: 100))
-        
+
         view.addSubview(blueView)
         blueView
             .exec()
-            .center(to: view)
+            .center(to: redView)
             .size(.init(width: 50, height: 50))
     }
 }

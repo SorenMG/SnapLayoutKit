@@ -19,17 +19,4 @@ public extension UIView {
             UIView._safeArea = newValue
         }
     }
-    
-    internal var parentViewController: UIViewController? {
-        get {
-            var parentResponder: UIResponder? = self
-            while parentResponder != nil {
-                parentResponder = parentResponder!.next
-                if let viewController = parentResponder as? UIViewController {
-                    return viewController
-                }
-            }
-            return nil
-        }
-    }
 }

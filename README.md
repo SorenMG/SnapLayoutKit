@@ -9,6 +9,7 @@
 - Lightweight and easy to use
 - Chainable methods
 - Automatically takes care of safe areas
+- Locale reading direction adaptation
 
 # Author
 Søren Møller Gade Hansen

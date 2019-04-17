@@ -69,4 +69,4 @@ fastlane/test_output
 
 # Mac specific
 .DS_STORE
-upcommingFeatures.md
+features.md

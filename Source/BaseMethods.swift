@@ -6,6 +6,12 @@
 //  Copyright © 2019 Søren Møller Gade Hansen. All rights reserved.
 //
 
+/*
+ 
+ Switch from being based upon NSLayoutConstraint to be based upon anchors.
+ 
+ */
+
 import UIKit
 
 public extension UIView {
@@ -25,61 +31,136 @@ public extension UIView {
     }
     
     // MARK: Base functions
-    internal func bind(attributes: [Attribute], to view: UIView, attributes viewAttributes: [Attribute], inset: UIEdgeInsets?) {
-        for (index, attribute) in attributes.enumerated() {
-            var offset: CGFloat!
-            switch attribute {
-            case .left:
-                offset = inset?.left ?? 0
-            case .right:
-                offset = inset?.right ?? 0
-                offset.negate()
-            case .top:
-                offset = inset?.top ?? 0
-            case .bottom:
-                offset = inset?.bottom ?? 0
-                offset.negate()
-            case .height:
-                #if DEBUG
-                fatalError("Cannot bind dimensions with this method yet.")
-                #endif
-                break
-            default:
-                break
-            }
-            bind(attribute: attribute, to: view, attribute: viewAttributes[index], offset: offset)
-        }
+    private func createXAxisLayoutConstraint(anchor: NSLayoutXAxisAnchor, equalTo viewAnchor: NSLayoutXAxisAnchor, offset: CGFloat) -> NSLayoutConstraint {
+        return anchor.constraint(equalTo: viewAnchor, constant: offset)
     }
     
-    internal func bind(attribute: Attribute, to view: UIView?, attribute attributeView: Attribute, offset: CGFloat) {
-        #if DEBUG
-        // Is view declared while trying to set a dimension
-        if (attribute.isDimension() && view != nil) {
-            fatalError("Cannot bind dimensions to a view")
-        }
-        
-        if (attribute.isDimension() && attributeView != .none) {
-            fatalError("Cannot bind dimension to an edge or a dimension")
-        }
-        #endif
-        
-        createLayoutConstraint(attribute: attribute, to: view, attribute: attributeView, value: offset).isActive = true
+    private func createYAxisLayoutConstraint(anchor: NSLayoutYAxisAnchor, equalTo viewAnchor: NSLayoutYAxisAnchor, offset: CGFloat) -> NSLayoutConstraint {
+        return anchor.constraint(equalTo: viewAnchor, constant: offset)
     }
     
-    internal func createLayoutConstraint(attribute: Attribute, to view: UIView?, attribute attributeView: Attribute, value: CGFloat) -> NSLayoutConstraint {
+    private func createDimensionLayoutConstraint(anchor: NSLayoutDimension, equalTo _viewAnchor: NSLayoutDimension?, value: CGFloat) -> NSLayoutConstraint {
+        if let viewAnchor = _viewAnchor {
+            return anchor.constraint(equalTo: viewAnchor)
+        }
+        return anchor.constraint(equalToConstant: value)
+    }
+    
+    private func bindXAxis(anchor: NSLayoutXAxisAnchor, equalTo viewAnchor: NSLayoutXAxisAnchor, offset: CGFloat, view: UIView) {
         
-        var targetAttribute: NSLayoutConstraint.Attribute = attributeView.attribute()
+        var safetyAnchor: NSLayoutXAxisAnchor = viewAnchor
         
         if safeArea {
-            if let parentVC = parentViewController {
-                if parentVC.view == view {
-                    if attributeView.isEdge() {
-                        targetAttribute = attributeView.safe()
+            if let name = safetyAnchor.value(forKey: "name") as? String {
+                if name == "left" {
+                    if #available(iOS 11.0, *) {
+                        safetyAnchor = view.safeAreaLayoutGuide.leftAnchor
+                    } else {
+                        // Fallback on earlier versions
+                    }
+                }
+                else if name == "right" {
+                    if #available(iOS 11.0, *) {
+                        safetyAnchor = view.safeAreaLayoutGuide.rightAnchor
+                    } else {
+                        // Fallback on earlier versions
                     }
                 }
             }
         }
         
-        return NSLayoutConstraint(item: self, attribute: attribute.attribute(), relatedBy: .equal, toItem: view, attribute: targetAttribute, multiplier: 1.0, constant: value)
+        createXAxisLayoutConstraint(anchor: anchor, equalTo: safetyAnchor, offset: offset).isActive = true
+    }
+    
+    private func bindYAxis(anchor: NSLayoutYAxisAnchor, equalTo viewAnchor: NSLayoutYAxisAnchor, offset: CGFloat, view: UIView) {
+        
+        var safetyAnchor: NSLayoutYAxisAnchor = viewAnchor
+        
+        if safeArea {
+            if let name = safetyAnchor.value(forKey: "name") as? String {
+                if name == "top" {
+                    if #available(iOS 11.0, *) {
+                        safetyAnchor = view.safeAreaLayoutGuide.topAnchor
+                    } else {
+                        // Fallback on earlier versions
+                    }
+                }
+                else if name == "bottom" {
+                    if #available(iOS 11.0, *) {
+                        safetyAnchor = view.safeAreaLayoutGuide.bottomAnchor
+                    } else {
+                        // Fallback on earlier versions
+                    }
+                }
+            }
+        }
+        
+        createYAxisLayoutConstraint(anchor: anchor, equalTo: safetyAnchor, offset: offset).isActive = true
+    }
+    
+    private func bindDimension(anchor: NSLayoutDimension, equalTo viewAnchor: NSLayoutDimension?, value: CGFloat) {
+        createDimensionLayoutConstraint(anchor: anchor, equalTo: viewAnchor, value: value).isActive = true
+    }
+    
+    internal func bind(attribute: Attribute, to viewAttribute: Attribute, offset: CGFloat, view: UIView) {
+        // As anchors are static, only check when developing
+        #if DEBUG
+//            if attribute.isXAxis() != viewAttribute.isXAxis() || attribute.isYAxis() != viewAttribute.isYAxis() || attribute.isDimension() != viewAttribute.isDimension() {
+//                fatalError("Cannot bind different typed anchors")
+//            }
+        #endif
+        
+        switch attribute {
+        case .width:
+            if viewAttribute == .height {
+                bindDimension(anchor: self.widthAnchor, equalTo: view.heightAnchor, value: offset)
+            }
+            else if viewAttribute == .width {
+                bindDimension(anchor: self.widthAnchor, equalTo: view.widthAnchor, value: offset)
+            }
+            else {
+                bindDimension(anchor: self.widthAnchor, equalTo: nil, value: offset)
+            }
+        case .height:
+            if viewAttribute == .height {
+                bindDimension(anchor: self.heightAnchor, equalTo: view.heightAnchor, value: offset)
+            }
+            else if viewAttribute == .width {
+                bindDimension(anchor: self.heightAnchor, equalTo: view.widthAnchor, value: offset)
+            }
+            else {
+                bindDimension(anchor: self.heightAnchor, equalTo: nil, value: offset)
+            }
+        case .left:
+            if viewAttribute == .right {
+                bindXAxis(anchor: self.leftAnchor, equalTo: view.rightAnchor, offset: offset, view: view)
+            } else {
+                bindXAxis(anchor: self.leftAnchor, equalTo: view.leftAnchor, offset: offset, view: view)
+            }
+        case .right:
+            if viewAttribute == .right {
+                bindXAxis(anchor: self.rightAnchor, equalTo: view.rightAnchor, offset: offset, view: view)
+            } else {
+                bindXAxis(anchor: self.rightAnchor, equalTo: view.leftAnchor, offset: offset, view: view)
+            }
+        case .top:
+            if viewAttribute == .top {
+                bindYAxis(anchor: self.topAnchor, equalTo: view.topAnchor, offset: offset, view: view)
+            } else {
+                bindYAxis(anchor: self.topAnchor, equalTo: view.bottomAnchor, offset: offset, view: view)
+            }
+        case .bottom:
+            if viewAttribute == .top {
+                bindYAxis(anchor: self.bottomAnchor, equalTo: view.topAnchor, offset: offset, view: view)
+            } else {
+                bindYAxis(anchor: self.bottomAnchor, equalTo: view.bottomAnchor, offset: offset, view: view)
+            }
+        case .centerX:
+            break
+        case .centerY:
+            break
+        case .none:
+            assert(false, "Cannot bind an undefined anchor")
+        }
     }
 }

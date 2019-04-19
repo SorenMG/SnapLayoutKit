@@ -15,6 +15,8 @@
 		457BA8B62266399300772F49 /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457BA8B52266399300772F49 /* Attribute.swift */; };
 		457BA8D62266651C00772F49 /* SnapLayoutKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4586BD06226634F500C589D4 /* SnapLayoutKit.framework */; };
 		457BA8D72266651C00772F49 /* SnapLayoutKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4586BD06226634F500C589D4 /* SnapLayoutKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		457BA8DC2267F4F300772F49 /* PropertyStoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457BA8DB2267F4F300772F49 /* PropertyStoring.swift */; };
+		457BA8DE2267FFFB00772F49 /* UpdateMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457BA8DD2267FFFB00772F49 /* UpdateMethods.swift */; };
 		4586BD0B226634F500C589D4 /* EasyLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 4586BD09226634F500C589D4 /* EasyLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4586BD182266350500C589D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4586BD172266350500C589D4 /* AppDelegate.swift */; };
 		4586BD1A2266350500C589D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4586BD192266350500C589D4 /* ViewController.swift */; };
@@ -53,6 +55,8 @@
 		457BA8B12266398C00772F49 /* BaseMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMethods.swift; sourceTree = "<group>"; };
 		457BA8B32266398E00772F49 /* CenteringMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenteringMethods.swift; sourceTree = "<group>"; };
 		457BA8B52266399300772F49 /* Attribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attribute.swift; sourceTree = "<group>"; };
+		457BA8DB2267F4F300772F49 /* PropertyStoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyStoring.swift; sourceTree = "<group>"; };
+		457BA8DD2267FFFB00772F49 /* UpdateMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateMethods.swift; sourceTree = "<group>"; };
 		4586BD06226634F500C589D4 /* SnapLayoutKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SnapLayoutKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4586BD09226634F500C589D4 /* EasyLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EasyLayout.h; sourceTree = "<group>"; };
 		4586BD0A226634F500C589D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -97,8 +101,10 @@
 				457BA8AB2266398600772F49 /* SnapMethods.swift */,
 				457BA8AF2266398B00772F49 /* Properties.swift */,
 				457BA8B12266398C00772F49 /* BaseMethods.swift */,
+				457BA8DB2267F4F300772F49 /* PropertyStoring.swift */,
 				457BA8B32266398E00772F49 /* CenteringMethods.swift */,
 				457BA8B52266399300772F49 /* Attribute.swift */,
+				457BA8DD2267FFFB00772F49 /* UpdateMethods.swift */,
 			);
 			name = Source;
 			path = ../Source;
@@ -259,9 +265,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				457BA8B02266398B00772F49 /* Properties.swift in Sources */,
+				457BA8DC2267F4F300772F49 /* PropertyStoring.swift in Sources */,
 				457BA8AE2266398900772F49 /* SizeMethods.swift in Sources */,
 				457BA8B42266398F00772F49 /* CenteringMethods.swift in Sources */,
 				457BA8AC2266398600772F49 /* SnapMethods.swift in Sources */,
+				457BA8DE2267FFFB00772F49 /* UpdateMethods.swift in Sources */,
 				457BA8B62266399300772F49 /* Attribute.swift in Sources */,
 				457BA8B22266398C00772F49 /* BaseMethods.swift in Sources */,
 			);

@@ -9,15 +9,15 @@
 import UIKit
 
 public extension UIView {
-    enum Attribute {
-        case width
-        case height
-        case left
-        case right
-        case top
-        case bottom
-        case centerX
-        case centerY
+    enum Attribute: String {
+        case width = "width"
+        case height = "height"
+        case left = "leading"
+        case right = "trailing"
+        case top = "top"
+        case bottom = "bottom"
+        case centerX = "centerX"
+        case centerY = "centerY"
         case none
 
         func isXAxis() -> Bool {
@@ -39,6 +39,29 @@ public extension UIView {
                 return true
             }
             return false
+        }
+        
+        func getAttribute() -> NSLayoutConstraint.Attribute {
+            switch self {
+            case .width:
+                return NSLayoutConstraint.Attribute.width
+            case .height:
+                return NSLayoutConstraint.Attribute.height
+            case .left:
+                return NSLayoutConstraint.Attribute.leading
+            case .right:
+                return NSLayoutConstraint.Attribute.trailing
+            case .top:
+                return NSLayoutConstraint.Attribute.top
+            case .bottom:
+                return NSLayoutConstraint.Attribute.bottom
+            case .centerX:
+                return NSLayoutConstraint.Attribute.centerX
+            case .centerY:
+                return NSLayoutConstraint.Attribute.centerY
+            case .none:
+                return NSLayoutConstraint.Attribute.notAnAttribute
+            }
         }
     }
 }

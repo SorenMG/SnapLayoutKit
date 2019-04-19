@@ -9,6 +9,7 @@
 import UIKit
 
 public extension UIView {
+    // Static safe area property
     private static var _safeArea = false
     
     internal var safeArea: Bool {
@@ -17,6 +18,22 @@ public extension UIView {
         }
         set {
             UIView._safeArea = newValue
+        }
+    }
+    
+    // Custom constraints array
+    typealias T = [NSLayoutConstraint]
+    
+    private struct CustomProperties {
+        static var snapConstraints = Array<NSLayoutConstraint>()
+    }
+    
+    internal var snapConstraints: [NSLayoutConstraint] {
+        get {
+            return getAssociatedObject(&CustomProperties.snapConstraints, defaultValue: CustomProperties.snapConstraints)
+        }
+        set {
+            return objc_setAssociatedObject(self, &CustomProperties.snapConstraints, newValue, .OBJC_ASSOCIATION_RETAIN)
         }
     }
 }

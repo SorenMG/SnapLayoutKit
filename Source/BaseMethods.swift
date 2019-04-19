@@ -6,15 +6,9 @@
 //  Copyright © 2019 Søren Møller Gade Hansen. All rights reserved.
 //
 
-/*
- 
- Switch from being based upon NSLayoutConstraint to be based upon anchors.
- 
- */
-
 import UIKit
 
-public extension UIView {
+extension UIView: PropertyStoring {
     // Turns off translatesAutoresizingMaskIntoConstraints
     @discardableResult
     public func exec() -> Self {
@@ -64,8 +58,7 @@ public extension UIView {
                 }
             }
         }
-        
-        createXAxisLayoutConstraint(anchor: anchor, equalTo: safetyAnchor, offset: offset).isActive = true
+        snapAddConstraint(createXAxisLayoutConstraint(anchor: anchor, equalTo: safetyAnchor, offset: offset))
     }
     
     private func bindYAxis(anchor: NSLayoutYAxisAnchor, equalTo viewAnchor: NSLayoutYAxisAnchor, offset: CGFloat, view: UIView) {
@@ -86,12 +79,11 @@ public extension UIView {
                 }
             }
         }
-        
-        createYAxisLayoutConstraint(anchor: anchor, equalTo: safetyAnchor, offset: offset).isActive = true
+        snapAddConstraint(createYAxisLayoutConstraint(anchor: anchor, equalTo: safetyAnchor, offset: offset))
     }
     
     private func bindDimension(anchor: NSLayoutDimension, equalTo viewAnchor: NSLayoutDimension?, value: CGFloat) {
-        createDimensionLayoutConstraint(anchor: anchor, equalTo: viewAnchor, value: value).isActive = true
+        snapAddConstraint(createDimensionLayoutConstraint(anchor: anchor, equalTo: viewAnchor, value: value))
     }
     
     internal func bind(attribute: Attribute, to viewAttribute: Attribute, offset: CGFloat, view: UIView) {
@@ -172,5 +164,21 @@ public extension UIView {
         case .none:
             assert(false, "Cannot bind an undefined anchor")
         }
+    }
+    
+    // Remove constraints from object
+    internal func deleteConstraint(_ constraint: NSLayoutConstraint) -> Bool {
+        // Remove from custom array
+        guard let index = snapConstraints.firstIndex(of: constraint) else { return false }
+        snapConstraints.remove(at: index)
+        
+        // Deactivate constraint
+        constraint.isActive = false
+        return true
+    }
+    
+    internal func snapAddConstraint(_ constraint: NSLayoutConstraint) {
+        snapConstraints.append(constraint)
+        constraint.isActive = true
     }
 }

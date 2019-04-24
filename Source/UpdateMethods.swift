@@ -12,26 +12,15 @@ extension UIView {
 
     @discardableResult
     public func update(constraint constraintAttribute: Attribute, toConstraint updateAttribute: Attribute, on view: UIView, offset: CGFloat) -> Self {
-        
-//        if constraintAttribute.isDimension() && updateAttribute != .none {
-//            assert(false, "When updating with, the second attribute should be .none")
-//            return self
-//        }
-
         for constraint in snapConstraints {
             if constraint.firstAttribute == constraintAttribute.getAttribute() {
-                if updateAttribute.getAttribute() == constraint.secondAttribute {
-                    // Anchor already exists.
-                    // Alter the offset
-                    constraint.constant = offset
-                    return self
-                }
-                // Needs new constraint
+                // Remove constraint
                 if !deleteConstraint(constraint) {
                     assert(false, "Could not locate constraint")
                     return self
                 }
                 
+                // Bind new constraint
                 bind(attribute: constraintAttribute, to: updateAttribute, offset: offset, view: view)
             }
         }
@@ -39,6 +28,7 @@ extension UIView {
         return self
     }
     
+    @discardableResult
     public func delete(_ attribute: Attribute) -> Self {
         for constraint in snapConstraints {
             if constraint.firstAttribute == attribute.getAttribute() {

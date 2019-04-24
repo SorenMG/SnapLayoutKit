@@ -35,7 +35,7 @@ public extension UIView {
         }
         
         func isDimension() -> Bool {
-            if self == .height || self == .width {
+            if self == .height || self == .width || self == .none {
                 return true
             }
             return false

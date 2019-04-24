@@ -88,13 +88,14 @@ extension UIView: PropertyStoring {
     
     internal func bind(attribute: Attribute, to viewAttribute: Attribute, offset: CGFloat, view: UIView) {
         // As anchors are static, only check when developing
-//        #if DEBUG
-//        print(attribute.isXAxis(), viewAttribute.isXAxis(), " | ", attribute.isYAxis(), viewAttribute.isYAxis(), " | ", attribute.isDimension(), viewAttribute.isDimension())
-//
-//            if attribute.isXAxis() != viewAttribute.isXAxis() || attribute.isYAxis() != viewAttribute.isYAxis() || attribute.isDimension() != viewAttribute.isDimension() {
-//                fatalError("Cannot bind different typed anchors")
-//            }
-//        #endif
+        #if DEBUG
+            snapAttributeFilter(attribute, viewAttribute) { (message, valid) in
+                if !valid {
+                    assert(false, "Binding failed: \(message)")
+                    return
+                }
+            }
+        #endif
         
         switch attribute {
         case .width:
@@ -180,5 +181,26 @@ extension UIView: PropertyStoring {
     internal func snapAddConstraint(_ constraint: NSLayoutConstraint) {
         snapConstraints.append(constraint)
         constraint.isActive = true
+    }
+    
+    internal func snapAttributeFilter(_ firstAttribute: Attribute, _ secondAttribute: Attribute, completion: (_ message: String, _ valid: Bool) -> ()) {
+        // Check if dimension is valid
+        if (firstAttribute.isDimension() && !secondAttribute.isDimension()) {
+            completion("Cannot have different dimension attributes", false)
+            return
+        }
+        
+        // Check if x axis is valid
+        if (firstAttribute.isXAxis() && !secondAttribute.isXAxis()) {
+            completion("Cannot have different X-Axis attributes", false)
+            return
+        }
+        
+        // Check if y axis is valid
+        if (firstAttribute.isYAxis() && !secondAttribute.isYAxis()) {
+            completion("Cannot have diffent Y-Axis attributes", false)
+            return
+        }
+        completion("", true)
     }
 }

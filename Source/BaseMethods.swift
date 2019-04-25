@@ -9,7 +9,14 @@
 import UIKit
 
 extension UIView: PropertyStoring {
-    // Turns off translatesAutoresizingMaskIntoConstraints
+    /**
+    
+    Makes the object ready for snapping.
+    
+    - returns:
+    An UIView object
+    
+    */
     @discardableResult
     public func exec() -> Self {
         self.translatesAutoresizingMaskIntoConstraints = false
@@ -17,7 +24,14 @@ extension UIView: PropertyStoring {
         return self
     }
     
-    // Toggles safe area
+    /**
+     
+     Toggles if the view should take care of safe area.
+     
+     - returns:
+     An UIView object
+     
+     */
     @discardableResult
     public func safe() -> Self {
         safeArea = !self.safeArea

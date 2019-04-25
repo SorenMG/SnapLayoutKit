@@ -10,7 +10,17 @@ import UIKit
 
 public extension UIView {
     // MARK: Size methods
-    // Set size of view as the given view
+    /**
+     
+     Sets the size of a view to be as a given view.
+     
+     - returns:
+     An UIView object
+     
+     - parameters:
+        - view: The view it should be the same size as
+     
+     */
     @discardableResult
     func size(as view: UIView) -> Self {
         bind(attribute: .width, to: .none, offset: view.frame.size.width, view: UIView())
@@ -18,7 +28,17 @@ public extension UIView {
         return self
     }
 
-    // Set custom size of view
+    /**
+     
+     Sets a custom size on the view.
+     
+     - returns:
+     An UIView object
+     
+     - parameters:
+     - size: The size the view should be equal
+     
+     */
     @discardableResult
     func size(_ size: CGSize) -> Self {
         if (size.width != 0) {

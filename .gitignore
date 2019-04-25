@@ -15,7 +15,7 @@ DerivedData/
 !default.mode2v3
 *.perspectivev3
 !default.perspectivev3
-xcuserdata/
+#xcuserdata/
 
 ## Other
 *.moved-aside
@@ -67,7 +67,12 @@ fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
 
-# Mac specific
+# MacOS
 .DS_STORE
+
+# Specific folders
 features.md
 Documentation/*
+
+# Pixelmator
+Assets/*.pxd

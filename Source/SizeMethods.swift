@@ -12,7 +12,7 @@ public extension UIView {
     // MARK: Size methods
     // Set size of view as the given view
     @discardableResult
-    public func size(as view: UIView) -> Self {
+    func size(as view: UIView) -> Self {
         bind(attribute: .width, to: .none, offset: view.frame.size.width, view: UIView())
         bind(attribute: .height, to: .none, offset: view.frame.size.height, view: UIView())
         return self
@@ -20,7 +20,7 @@ public extension UIView {
 
     // Set custom size of view
     @discardableResult
-    public func size(_ size: CGSize) -> Self {
+    func size(_ size: CGSize) -> Self {
         if (size.width != 0) {
             bind(attribute: .width, to: .none, offset: size.width, view: UIView())
         }

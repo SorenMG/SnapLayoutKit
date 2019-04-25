@@ -12,7 +12,7 @@ public extension UIView {
     // MARK: Centering wrapper methods
     // Centers view to view
     @discardableResult
-    public func center(to view: UIView) -> Self {
+    func center(to view: UIView) -> Self {
         bind(attribute: .centerX, to: .centerX, offset: 0, view: view)
         bind(attribute: .centerY, to: .centerY, offset: 0, view: view)
         return self
@@ -20,13 +20,13 @@ public extension UIView {
     
     // Centers view X axis to view
     @discardableResult
-    public func centerX(to view: UIView) -> Self {
+    func centerX(to view: UIView) -> Self {
         bind(attribute: .centerX, to: .centerX, offset: 0, view: view)
         return self
     }
     
     @discardableResult
-    public func centerY(to view: UIView) -> Self {
+    func centerY(to view: UIView) -> Self {
         bind(attribute: .centerY, to: .centerY, offset: 0, view: view)
         return self
     }

@@ -48,7 +48,7 @@ class ViewController: UIViewController {
             .centerY(to: greenView)
             .snapRight(view, offset: -100)
             .size(.init(width: 100, height: 100))
-
+        
         view.addSubview(blueView)
         blueView
             .exec()
